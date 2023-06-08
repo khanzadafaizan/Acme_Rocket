@@ -1,17 +1,25 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./build/*.html", "./build/*.js"],
+  content: ["./build/*.html", "./build/js/*.js"],
   theme: {
     extend: {
+      color: {
+        papayawhip: {
+          light: '#fef4e4',
+          DEFAULT: '#ffefdS',
+          dark: '#fee5bc',
+        }
+
+      },
       screens: {
         'widescreen': {'raw':'(min-aspect-ratio: 3/2)'},
-        'tallscreen': {'raw':'(min-aspect-ratio: 13/20)'}, 
+        'tallscreen': {'raw':'(max-aspect-ratio: 13/20)'}, 
       },
       Keyframes:{
         'open-menu':{
-          '0%':{ Transform: 'scaleY(0)' },
-          '80%':{ Transform: 'scaleY(1.2)' },
-          '100%':{ Transform: 'scaleY(1)' },
+          '0%':{ transform: 'scaleY(0)' },
+          '80%':{ transform: 'scaleY(1.2)' },
+          '100%':{ transform: 'scaleY(1)' },
         },
       },
       animation: {
